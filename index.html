@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemma3 AI 챗봇</title>
+    <!-- 글꼴 추가 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Marked.js 라이브러리 추가 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.0.0/marked.min.js"></script>
+    <!-- 코드 하이라이팅 라이브러리 추가 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- 스타일시트 링크 -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="chat-app">
+        <button class="theme-toggle" id="theme-toggle">
+            <i class="material-icons">dark_mode</i>
+        </button>
+        
+        <div class="header">
+            <div class="header-logo">
+                <i class="material-icons">smart_toy</i>
+            </div>
+            <div class="header-text">
+                <h1>Gemma3 AI</h1>
+                <p>인공지능과 대화하세요</p>
+            </div>
+        </div>
+        
+        <div id="chat-container" class="chat-container">
+            <div class="welcome-container">
+                <div class="welcome-logo">
+                    <i class="material-icons">smart_toy</i>
+                </div>
+                <h2 class="welcome-title">Gemma3 AI와 대화를 시작하세요</h2>
+                <p class="welcome-text">
+                    안녕하세요! 저는 Gemma3 AI입니다. 어떤 주제에 대해 알고 싶거나, 질문이 있거나, 
+                    도움이 필요하신가요? 아래에 메시지를 입력하시거나 제안된 주제를 선택해보세요.
+                </p>
+                <div class="suggestions" id="initial-suggestions">
+                    <button class="suggestion-chip">코딩 도움이 필요해요</button>
+                    <button class="suggestion-chip">시를 써줄래요?</button>
+                    <button class="suggestion-chip">머신러닝에 대해 알려주세요</button>
+                    <button class="suggestion-chip">재미있는 사실을 알려주세요</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="suggestions-container" class="suggestions-container">
+            <div class="suggestions" id="dynamic-suggestions">
+                <!-- 동적으로 생성되는 추천 질문 버튼들이 여기에 표시됩니다 -->
+            </div>
+        </div>
+        
+        <div class="input-area">
+            <div class="input-container">
+                <textarea id="user-input" placeholder="메시지를 입력하세요... " rows="1" autocomplete="off"></textarea>
+                <button id="send-button">
+                    <i class="material-icons">send</i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 스크립트 링크 -->
+    <script src="script.js"></script>
+</body>
+</html>
